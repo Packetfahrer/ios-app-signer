@@ -175,6 +175,7 @@ int markdownConsume(char* text, int token, yyscan_t scanner);
   style.headIndent = headIndent;
   style.lineSpacing = lineSpacing;
   style.alignment = alignment;
+    
   style.tabStops = @[[[NSTextTab alloc] initWithTextAlignment:alignment location:firstTabStop options:nil]];
 
   return @{ NSParagraphStyleAttributeName: style };

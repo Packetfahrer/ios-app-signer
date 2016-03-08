@@ -45,8 +45,8 @@ class UpdatesController: NSWindowController {
                     do{
                         
                         let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
-                        if let releases = json as? [[String: AnyObject]],
-                            release = releases[0] as? [String: AnyObject],
+                        if let releases:AnyObject = json as? [[String: AnyObject]],
+                            release = releases[0]  as? [String: AnyObject],
                             name = release["name"] as? String {
                                 let prefs = NSUserDefaults.standardUserDefaults()
                                 if let skipVersion = prefs.stringForKey("skipVersion"){
